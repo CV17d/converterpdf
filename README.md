@@ -1,44 +1,75 @@
-# DocuMorph - Suite Profesional de Conversión de Documentos
+# DocuMorph - Suite Profesional de Conversión de Documentos (10 en 1)
 
-Suite de herramientas 100% local, rápida y privada para convertir entre formatos PDF y documentos ofimáticos e imágenes, sin marcas de agua ni límites de tamaño.
-
----
-
-## 🛠️ Herramientas Incluidas (10 en 1)
-
-### 📥 Convertir hacia PDF
-1. **JPG a PDF**: Agrupa y convierte imágenes (`.jpg`, `.jpeg`, `.png`, `.webp`) en un solo documento PDF con alta calidad.
-2. **WORD a PDF**: Convierte documentos (`.docx`, `.doc`) a PDF con fidelidad tipográfica.
-3. **POWERPOINT a PDF**: Convierte presentaciones (`.pptx`, `.ppt`) a PDF en alta resolución.
-4. **EXCEL a PDF**: Convierte hojas de cálculo (`.xlsx`, `.xls`) a PDF corporativo con tablas bordeadas y encabezados.
-5. **HTML a PDF**: Convierte páginas web y archivos (`.html`, `.htm`) a PDF mediante Microsoft Edge Headless.
-
-### 📤 Convertir desde PDF
-6. **PDF a JPG**: Extrae todas las páginas del PDF en imágenes JPG de alta definición (empaqueta en ZIP si son múltiples).
-7. **PDF a WORD**: Reconstruye el documento en Microsoft Word editable (`.docx`) preservando tablas, estilos y párrafos.
-8. **PDF a POWERPOINT**: Genera una presentación (`.pptx`) con diapositivas editables a partir de cada página.
-9. **PDF a EXCEL**: Detecta y extrae tablas de datos estructurados directamente a un libro de Microsoft Excel (`.xlsx`).
-10. **PDF a PDF/A**: Convierte a formato estándar ISO PDF/A (PDF/A-1b) para conservación documental a largo plazo.
+Convertidor de documentos y PDFs 100% local, privado, sin límites de tamaño y sin marcas de agua. Toda la conversión se procesa directamente en tu ordenador.
 
 ---
 
-## 🚀 Cómo Iniciar la Suite
+## 🚀 Inicio Rápido (Para cualquier persona que clone el repo)
 
-### 1. Interfaz Web (Recomendado)
-- **Windows (1 Clic)**: Haz doble clic en [`iniciar.bat`](file:///C:/Users/HP/.gemini/antigravity-ide/scratch/pdf-to-word/iniciar.bat).
-- **Desde Consola**:
+### Requisito previo
+Tener **Python 3.10 o superior** instalado ([Descargar Python](https://www.python.org/downloads/)).
+> *Nota: Al instalar Python en Windows, asegúrate de marcar la casilla **"Add Python to PATH"**.*
+
+---
+
+### Paso a paso para usarlo:
+
+#### 1. Clonar el repositorio
+Abre tu terminal (PowerShell, CMD o Terminal) y escribe:
+```bash
+git clone https://github.com/CV17d/converterpdf.git
+cd converterpdf
+```
+
+#### 2. Iniciar el proyecto
+
+* **En Windows (Recomendado - 1 Clic):**
+  Solo haz doble clic en el archivo **`iniciar.bat`**.
+  *(El script detectará automáticamente si necesitas instalar las librerías, las instalará y abrirá tu navegador web).*
+
+* **Desde la terminal (Windows, Mac o Linux):**
   ```bash
+  # 1. Instalar librerías
+  pip install -r requirements.txt
+
+  # 2. Iniciar la aplicación
   python app.py
   ```
-El navegador se abrirá automáticamente en `http://127.0.0.1:5000`.
 
-### 2. Conversión por Terminal (CLI)
+¡Listo! Tu navegador se abrirá automáticamente en:
+👉 **`http://127.0.0.1:5000`**
+
+---
+
+## 🛠️ Herramientas Disponibles
+
+| Herramienta | Entrada | Salida | Descripción |
+| :--- | :--- | :--- | :--- |
+| **JPG a PDF** | `.jpg`, `.png`, `.webp` | `.pdf` | Agrupa y convierte múltiples imágenes en un único PDF. |
+| **WORD a PDF** | `.docx`, `.doc` | `.pdf` | Convierte documentos Word a formato PDF estándar. |
+| **POWERPOINT a PDF** | `.pptx`, `.ppt` | `.pdf` | Convierte diapositivas a documento PDF en alta resolución. |
+| **EXCEL a PDF** | `.xlsx`, `.xls` | `.pdf` | Convierte hojas de cálculo a PDF maquetado con bordes y estilos. |
+| **HTML a PDF** | `.html`, `.htm` | `.pdf` | Renderiza páginas web o archivos HTML a PDF. |
+| **PDF a JPG** | `.pdf` | `.jpg` / `.zip` | Extrae cada página en alta resolución (empaquetado ZIP si son varias). |
+| **PDF a WORD** | `.pdf` | `.docx` | Reconstruye texto, tablas y formato editable en Microsoft Word. |
+| **PDF a POWERPOINT** | `.pdf` | `.pptx` | Genera una presentación PowerPoint editable con cada página. |
+| **PDF a EXCEL** | `.pdf` | `.xlsx` | Extrae tablas tabuladas directamente a un libro Excel. |
+| **PDF a PDF/A** | `.pdf` | `.pdf` | Convierte a formato estándar ISO para archivo a largo plazo. |
+
+---
+
+## 💻 Uso por Línea de Comandos (CLI)
+Si prefieres convertir archivos directamente desde la terminal:
+
 ```bash
-# PDF a Word
+# Convertir PDF a Word
 python cli.py "documento.pdf" -o "salida.docx"
+
+# Convertir solo páginas específicas (ejemplo: páginas 1 a 3 y página 5)
+python cli.py "documento.pdf" --pages "1-3,5"
 ```
 
 ---
 
 ## 🔒 Privacidad y Seguridad
-Todos los procesos se ejecutan estrictamente en tu ordenador local. Ningún documento o información viaja a internet o servidores externos.
+Tus documentos nunca salen de tu ordenador. No requiere conexión a internet para convertir archivos ni almacena tus datos en la nube.
