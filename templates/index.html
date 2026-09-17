@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PDF to Word Pro - Convertidor Inteligente de Documentos</title>
-  <meta name="description" content="Convierte archivos PDF a documentos Word (.docx) editables manteniendo tablas, imágenes y tipografía original. Rápido, privado y 100% local.">
+  <title>DocuMorph - Suite Completa de Conversión PDF & Documentos</title>
+  <meta name="description" content="Convierte entre PDF, Word, Excel, PowerPoint, JPG y HTML de forma 100% local, rápida y privada.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-  <!-- Background glow shapes -->
+  <!-- Ambient glow orbs -->
   <div class="bg-blur glow-top"></div>
   <div class="bg-blur glow-bottom"></div>
 
   <div class="app-container">
-    <!-- Header -->
+    <!-- Navbar -->
     <header class="navbar">
       <div class="brand">
         <div class="brand-icon">
@@ -29,13 +29,13 @@
           </svg>
         </div>
         <span class="brand-title">Docu<span class="gradient-text">Morph</span></span>
-        <span class="badge-pill">PDF → DOCX</span>
+        <span class="badge-pill">SUITE 10 EN 1</span>
       </div>
 
       <div class="nav-actions">
         <div class="local-badge" title="Tus archivos nunca salen de tu ordenador">
           <span class="status-dot"></span>
-          <span>100% Local & Seguro</span>
+          <span>100% Local & Privado</span>
         </div>
         <button id="themeToggleBtn" class="icon-btn" aria-label="Cambiar Tema" title="Cambiar tema">
           <svg id="moonIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -62,193 +62,313 @@
       <section class="hero-section">
         <div class="hero-chip">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-          Motor Neuronal de Reconstrucción de Documentos
+          Suite Profesional de Conversión de Archivos
         </div>
-        <h1 class="hero-title">Convierte tus <span class="text-gradient-red">PDFs</span> en documentos <span class="text-gradient-blue">Word</span> editables</h1>
-        <p class="hero-subtitle">Preserva texto, tablas complejas, fuentes, imágenes y alineaciones originales sin marcas de agua ni límites.</p>
+        <h1 class="hero-title">Todas las herramientas para tus <span class="gradient-text">PDFs</span> en un solo lugar</h1>
+        <p class="hero-subtitle">Convierte entre documentos de Office, imágenes, páginas web y PDFs de forma instantánea sin límites ni marcas de agua.</p>
       </section>
 
-      <!-- Main Card -->
-      <div class="converter-card" id="converterCard">
+      <!-- Category Filter Tabs -->
+      <div class="filter-tabs">
+        <button class="filter-btn active" data-filter="all">Todas las herramientas (10)</button>
+        <button class="filter-btn" data-filter="to-pdf">Convertir a PDF (5)</button>
+        <button class="filter-btn" data-filter="from-pdf">Convertir desde PDF (5)</button>
+      </div>
 
-        <!-- Stage 1: Dropzone -->
-        <div class="stage-view active" id="dropzoneStage">
-          <div class="dropzone" id="dropzone">
-            <input type="file" id="fileInput" accept=".pdf,application/pdf" hidden>
-            <div class="drop-illustration">
-              <div class="icon-ring">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                  <polyline points="17 8 12 3 7 8"></polyline>
-                  <line x1="12" y1="3" x2="12" y2="15"></line>
-                </svg>
-              </div>
-            </div>
-            <h2 class="drop-title">Arrastra y suelta tu archivo PDF aquí</h2>
-            <p class="drop-desc">o haz clic para explorar tus archivos</p>
-            <div class="drop-tags">
-              <span class="file-spec">Archivos .PDF</span>
-              <span class="file-spec">Hasta 150 MB</span>
-              <span class="file-spec">Procesamiento Local</span>
-            </div>
-            <button type="button" class="btn-primary select-btn" id="selectFileBtn">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
-              Seleccionar Archivo PDF
-            </button>
+      <!-- Tools Grid (Mirroring exact user specifications) -->
+      <section class="tools-grid-container" id="toolsGrid">
+        
+        <!-- COLUMNA 1: HACIA PDF -->
+        <div class="tool-card" data-tool="jpg-to-pdf" data-category="to-pdf">
+          <div class="tool-icon-wrapper tool-jpg">
+            <span class="tool-badge-text">JPG</span>
+            <span class="tool-arrow">↘</span>
           </div>
+          <div class="tool-info">
+            <h3 class="tool-name">JPG a PDF</h3>
+            <p class="tool-sub">Convierte imágenes JPG, PNG o WEBP a documento PDF</p>
+          </div>
+          <div class="tool-action-arrow">➔</div>
         </div>
 
-        <!-- Stage 2: Configuration & Preview -->
-        <div class="stage-view hidden" id="previewStage">
-          <div class="preview-header">
-            <div class="file-pill">
-              <div class="file-badge-pdf">PDF</div>
-              <div class="file-details">
-                <div class="file-name" id="previewFilename">documento.pdf</div>
-                <div class="file-meta" id="previewFileMeta">0 páginas • 0 MB</div>
-              </div>
-            </div>
-            <button type="button" class="btn-ghost remove-btn" id="cancelFileBtn" title="Cambiar archivo">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-              Cambiar
-            </button>
+        <div class="tool-card" data-tool="word-to-pdf" data-category="to-pdf">
+          <div class="tool-icon-wrapper tool-word">
+            <span class="tool-badge-text">W</span>
+            <span class="tool-arrow">↘</span>
           </div>
+          <div class="tool-info">
+            <h3 class="tool-name">WORD a PDF</h3>
+            <p class="tool-sub">Convierte archivos DOCX y DOC a PDF con motor nativo</p>
+          </div>
+          <div class="tool-action-arrow">➔</div>
+        </div>
 
-          <!-- Page Range Options -->
-          <div class="options-box">
-            <label class="options-title">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
-              Rango de Páginas
-            </label>
-            <div class="radio-group">
-              <label class="radio-card">
-                <input type="radio" name="pageOption" value="all" checked id="optionAllPages">
-                <div class="radio-content">
-                  <span class="radio-label">Todas las páginas</span>
-                  <span class="radio-sub">Convertir el documento íntegro</span>
+        <div class="tool-card" data-tool="ppt-to-pdf" data-category="to-pdf">
+          <div class="tool-icon-wrapper tool-ppt">
+            <span class="tool-badge-text">P</span>
+            <span class="tool-arrow">↘</span>
+          </div>
+          <div class="tool-info">
+            <h3 class="tool-name">POWERPOINT a PDF</h3>
+            <p class="tool-sub">Convierte presentaciones PPTX a documentos PDF</p>
+          </div>
+          <div class="tool-action-arrow">➔</div>
+        </div>
+
+        <div class="tool-card" data-tool="excel-to-pdf" data-category="to-pdf">
+          <div class="tool-icon-wrapper tool-excel">
+            <span class="tool-badge-text">X</span>
+            <span class="tool-arrow">↘</span>
+          </div>
+          <div class="tool-info">
+            <h3 class="tool-name">EXCEL a PDF</h3>
+            <p class="tool-sub">Convierte hojas de cálculo XLSX y XLS a PDF con ajuste</p>
+          </div>
+          <div class="tool-action-arrow">➔</div>
+        </div>
+
+        <div class="tool-card" data-tool="html-to-pdf" data-category="to-pdf">
+          <div class="tool-icon-wrapper tool-html">
+            <span class="tool-badge-text">HTML</span>
+            <span class="tool-arrow">↘</span>
+          </div>
+          <div class="tool-info">
+            <h3 class="tool-name">HTML a PDF</h3>
+            <p class="tool-sub">Convierte páginas web y archivos HTML a PDF fiel</p>
+          </div>
+          <div class="tool-action-arrow">➔</div>
+        </div>
+
+        <!-- COLUMNA 2: DESDE PDF -->
+        <div class="tool-card" data-tool="pdf-to-jpg" data-category="from-pdf">
+          <div class="tool-icon-wrapper tool-jpg-rev">
+            <span class="tool-arrow-in">↘</span>
+            <span class="tool-badge-text">JPG</span>
+          </div>
+          <div class="tool-info">
+            <h3 class="tool-name">PDF a JPG</h3>
+            <p class="tool-sub">Extrae cada página del PDF en imágenes de alta resolución</p>
+          </div>
+          <div class="tool-action-arrow">➔</div>
+        </div>
+
+        <div class="tool-card active-selection" data-tool="pdf-to-word" data-category="from-pdf">
+          <div class="tool-icon-wrapper tool-word-rev">
+            <span class="tool-arrow-in">↘</span>
+            <span class="tool-badge-text">W</span>
+          </div>
+          <div class="tool-info">
+            <h3 class="tool-name">PDF a WORD</h3>
+            <p class="tool-sub">Convierte PDF a documento Word (.docx) 100% editable</p>
+          </div>
+          <div class="tool-action-arrow">➔</div>
+        </div>
+
+        <div class="tool-card" data-tool="pdf-to-ppt" data-category="from-pdf">
+          <div class="tool-icon-wrapper tool-ppt-rev">
+            <span class="tool-arrow-in">↘</span>
+            <span class="tool-badge-text">P</span>
+          </div>
+          <div class="tool-info">
+            <h3 class="tool-name">PDF a POWERPOINT</h3>
+            <p class="tool-sub">Transforma páginas PDF en diapositivas PPTX editables</p>
+          </div>
+          <div class="tool-action-arrow">➔</div>
+        </div>
+
+        <div class="tool-card" data-tool="pdf-to-excel" data-category="from-pdf">
+          <div class="tool-icon-wrapper tool-excel-rev">
+            <span class="tool-arrow-in">↘</span>
+            <span class="tool-badge-text">X</span>
+          </div>
+          <div class="tool-info">
+            <h3 class="tool-name">PDF a EXCEL</h3>
+            <p class="tool-sub">Detecta y extrae tablas de datos a hoja de cálculo XLSX</p>
+          </div>
+          <div class="tool-action-arrow">➔</div>
+        </div>
+
+        <div class="tool-card" data-tool="pdf-to-pdfa" data-category="from-pdf">
+          <div class="tool-icon-wrapper tool-pdfa">
+            <span class="tool-arrow-in">↘</span>
+            <span class="tool-badge-text">/A</span>
+          </div>
+          <div class="tool-info">
+            <h3 class="tool-name">PDF a PDF/A</h3>
+            <p class="tool-sub">Convierte a estándar ISO PDF/A para archivado a largo plazo</p>
+          </div>
+          <div class="tool-action-arrow">➔</div>
+        </div>
+
+      </section>
+
+      <!-- Active Workspace Section -->
+      <section class="workspace-section" id="workspaceSection">
+        <div class="workspace-header">
+          <div class="workspace-current-tool">
+            <span class="ws-label">Herramienta seleccionada:</span>
+            <span class="ws-tool-name" id="currentToolName">PDF a WORD</span>
+            <span class="ws-ext-tag" id="currentToolExt">Entrada: .pdf ➔ Salida: .docx</span>
+          </div>
+          <button type="button" class="btn-ghost change-tool-btn" id="scrollToGridBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+            Cambiar herramienta
+          </button>
+        </div>
+
+        <!-- Conversion Card -->
+        <div class="converter-card" id="converterCard">
+
+          <!-- Stage 1: Dropzone -->
+          <div class="stage-view active" id="dropzoneStage">
+            <div class="dropzone" id="dropzone">
+              <input type="file" id="fileInput" hidden>
+              <div class="drop-illustration">
+                <div class="icon-ring" id="dropzoneIconRing">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="17 8 12 3 7 8"></polyline>
+                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                  </svg>
                 </div>
-              </label>
+              </div>
+              <h2 class="drop-title" id="dropTitle">Arrastra tu archivo PDF aquí</h2>
+              <p class="drop-desc" id="dropDesc">o haz clic para buscar en tu equipo</p>
+              <div class="drop-tags" id="dropTags">
+                <span class="file-spec" id="acceptExtTag">Archivos .PDF</span>
+                <span class="file-spec">Hasta 200 MB</span>
+                <span class="file-spec">100% Local y Seguro</span>
+              </div>
+              <button type="button" class="btn-primary select-btn" id="selectFileBtn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+                <span id="selectBtnText">Seleccionar Archivo</span>
+              </button>
+            </div>
+          </div>
 
-              <label class="radio-card">
-                <input type="radio" name="pageOption" value="custom" id="optionCustomPages">
-                <div class="radio-content">
-                  <span class="radio-label">Páginas seleccionadas</span>
-                  <span class="radio-sub">Ejemplo: 1-3, 5, 8</span>
+          <!-- Stage 2: Preview & Configuration -->
+          <div class="stage-view hidden" id="previewStage">
+            <div class="preview-header">
+              <div class="file-pill">
+                <div class="file-badge-active" id="previewBadge">DOC</div>
+                <div class="file-details">
+                  <div class="file-name" id="previewFilename">documento.pdf</div>
+                  <div class="file-meta" id="previewFileMeta">0 MB</div>
                 </div>
+              </div>
+              <button type="button" class="btn-ghost remove-btn" id="cancelFileBtn" title="Cambiar archivo">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                Cambiar
+              </button>
+            </div>
+
+            <!-- Page range option (Active for PDF-based tools) -->
+            <div class="options-box" id="pageRangeOptionsBox">
+              <label class="options-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
+                Páginas a procesar
               </label>
-            </div>
+              <div class="radio-group">
+                <label class="radio-card">
+                  <input type="radio" name="pageOption" value="all" checked id="optionAllPages">
+                  <div class="radio-content">
+                    <span class="radio-label">Todas las páginas</span>
+                    <span class="radio-sub">Procesar documento completo</span>
+                  </div>
+                </label>
 
-            <div class="custom-range-input-wrapper hidden" id="customRangeWrapper">
-              <input type="text" id="pageRangeInput" class="text-input" placeholder="Ej: 1-5, 7, 10" autocomplete="off">
-              <span class="range-helper">Especifica páginas o rangos separados por comas.</span>
-            </div>
-          </div>
+                <label class="radio-card">
+                  <input type="radio" name="pageOption" value="custom" id="optionCustomPages">
+                  <div class="radio-content">
+                    <span class="radio-label">Páginas específicas</span>
+                    <span class="radio-sub">Ejemplo: 1-3, 5</span>
+                  </div>
+                </label>
+              </div>
 
-          <div class="action-footer">
-            <button type="button" class="btn-primary start-btn" id="startConversionBtn">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-              Convertir a Word (.docx)
-            </button>
-          </div>
-        </div>
-
-        <!-- Stage 3: Conversion in progress -->
-        <div class="stage-view hidden" id="processingStage">
-          <div class="processing-container">
-            <div class="spinner-container">
-              <div class="pulse-ring"></div>
-              <div class="pulse-ring delayed"></div>
-              <div class="doc-icon-swap">
-                <div class="icon-swap-pdf">PDF</div>
-                <div class="swap-arrow">➔</div>
-                <div class="icon-swap-word">DOCX</div>
+              <div class="custom-range-input-wrapper hidden" id="customRangeWrapper">
+                <input type="text" id="pageRangeInput" class="text-input" placeholder="Ej: 1-5, 7, 10" autocomplete="off">
+                <span class="range-helper">Especifica páginas o rangos separados por comas.</span>
               </div>
             </div>
 
-            <h3 class="processing-title" id="processTitle">Convirtiendo documento...</h3>
-            <p class="processing-status" id="processStatus">Analizando texto, tablas y formato original...</p>
-
-            <div class="progress-bar-wrap">
-              <div class="progress-bar-fill" id="progressBar"></div>
-            </div>
-
-            <div class="steps-indicator">
-              <span class="step-dot active" id="step1">1. Análisis</span>
-              <span class="step-dot" id="step2">2. Extracción</span>
-              <span class="step-dot" id="step3">3. Reconstrucción</span>
-              <span class="step-dot" id="step4">4. Finalización</span>
+            <div class="action-footer">
+              <button type="button" class="btn-primary start-btn" id="startConversionBtn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                <span id="startBtnText">Iniciar Conversión</span>
+              </button>
             </div>
           </div>
-        </div>
 
-        <!-- Stage 4: Result / Download -->
-        <div class="stage-view hidden" id="resultStage">
-          <div class="result-container">
-            <div class="success-animation">
+          <!-- Stage 3: Processing -->
+          <div class="stage-view hidden" id="processingStage">
+            <div class="processing-container">
+              <div class="spinner-container">
+                <div class="pulse-ring"></div>
+                <div class="pulse-ring delayed"></div>
+                <div class="doc-icon-swap">
+                  <div class="icon-swap-input" id="iconSwapInput">ORIG</div>
+                  <div class="swap-arrow">➔</div>
+                  <div class="icon-swap-output" id="iconSwapOutput">DEST</div>
+                </div>
+              </div>
+
+              <h3 class="processing-title" id="processTitle">Procesando documento...</h3>
+              <p class="processing-status" id="processStatus">Iniciando motor de conversión...</p>
+
+              <div class="progress-bar-wrap">
+                <div class="progress-bar-fill" id="progressBar"></div>
+              </div>
+
+              <div class="steps-indicator">
+                <span class="step-dot active" id="step1">1. Carga</span>
+                <span class="step-dot" id="step2">2. Análisis</span>
+                <span class="step-dot" id="step3">3. Conversión</span>
+                <span class="step-dot" id="step4">4. Empaquetado</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stage 4: Result / Download -->
+          <div class="stage-view hidden" id="resultStage">
+            <div class="result-container">
               <div class="check-icon-circle">
                 <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </div>
-            </div>
 
-            <h3 class="result-title">¡Conversión Completada con Éxito!</h3>
-            <p class="result-desc">Tu documento Word editable (.docx) está listo para descargar.</p>
+              <h3 class="result-title">¡Conversión Completada con Éxito!</h3>
+              <p class="result-desc" id="resultDesc">Tu archivo convertido está listo para descargar.</p>
 
-            <div class="result-card-box">
-              <div class="result-file-badge">DOCX</div>
-              <div class="result-details">
-                <div class="result-filename" id="resultFilename">documento.docx</div>
-                <div class="result-meta" id="resultMeta">0.0 MB • Convertido en 0.0s</div>
+              <div class="result-card-box">
+                <div class="result-file-badge" id="resultFileBadge">DOCX</div>
+                <div class="result-details">
+                  <div class="result-filename" id="resultFilename">documento.docx</div>
+                  <div class="result-meta" id="resultMeta">0.0 MB • Convertido en 0.0s</div>
+                </div>
+              </div>
+
+              <div class="result-actions">
+                <a href="#" id="downloadBtn" class="btn-primary download-action-btn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                  </svg>
+                  <span id="downloadBtnText">Descargar Archivo</span>
+                </a>
+                <button type="button" class="btn-ghost convert-more-btn" id="convertAnotherBtn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M1 4v6h6"></path>
+                    <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+                  </svg>
+                  Convertir otro archivo
+                </button>
               </div>
             </div>
-
-            <div class="result-actions">
-              <a href="#" id="downloadBtn" class="btn-primary download-action-btn">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                  <polyline points="7 10 12 15 17 10"></polyline>
-                  <line x1="12" y1="15" x2="12" y2="3"></line>
-                </svg>
-                Descargar Documento Word (.docx)
-              </a>
-              <button type="button" class="btn-ghost convert-more-btn" id="convertAnotherBtn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M1 4v6h6"></path>
-                  <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
-                </svg>
-                Convertir otro archivo
-              </button>
-            </div>
           </div>
-        </div>
 
-      </div>
-
-      <!-- Features Section -->
-      <section class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon bg-blue-tint">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-          </div>
-          <h4>100% Privado y Seguro</h4>
-          <p>Tus documentos se procesan íntegramente en tu propia máquina. Sin envíos a la nube ni almacenamiento de terceros.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon bg-purple-tint">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M21 9H3M21 15H3M12 3v18"/></svg>
-          </div>
-          <h4>Reconstrucción de Tablas</h4>
-          <p>Convierte cuadrículas y tablas de datos en tablas editables nativas de Microsoft Word sin perder alineación.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon bg-green-tint">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-          </div>
-          <h4>Sin Límites de Conversión</h4>
-          <p>Convierte archivos de cualquier tamaño o número de páginas sin cuotas, restricciones ni marcas de agua.</p>
         </div>
       </section>
 
@@ -259,7 +379,7 @@
           <button type="button" class="btn-text" id="clearHistoryBtn">Limpiar historial</button>
         </div>
         <div class="history-list" id="historyList">
-          <!-- Dynamically populated -->
+          <!-- Dinámico -->
         </div>
       </section>
 
@@ -267,11 +387,10 @@
 
     <!-- Footer -->
     <footer class="footer">
-      <p>DocuMorph PDF to Word • Construido para máxima fidelidad y privacidad</p>
+      <p>DocuMorph Document Suite • Conversión nativa y privada 100% local</p>
     </footer>
   </div>
 
-  <!-- Toast Notification Container -->
   <div class="toast-container" id="toastContainer"></div>
 
   <script src="/static/js/app.js"></script>
