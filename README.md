@@ -1,22 +1,22 @@
 # DocuMorph - Suite Profesional de Conversión de Documentos (10 en 1)
 
-Convertidor de documentos y PDFs 100% local, privado, sin límites de tamaño y sin marcas de agua. Toda la conversión se procesa directamente en tu ordenador.
+Aplicación de escritorio nativa para PC (Windows) y suite de herramientas 100% local, rápida y privada para convertir entre formatos PDF, documentos ofimáticos e imágenes, sin límites y sin marcas de agua.
 
 ---
 
-## ⚡ ¿Cómo usar la aplicación? (Elige tu opción)
+## 🖥️ ¿Cómo usar la aplicación? (Elige tu opción)
 
-### Opción A: Descargar el ejecutable (.exe) directo (Sin instalar Python)
-Ideal para usuarios finales que solo quieren usar el programa sin tocar código:
-1. Ve a la pestaña de **[Releases del repositorio](https://github.com/CV17d/converterpdf/releases)**.
+### Opción A: Descargar el programa de escritorio (.exe) listo para usar (Recomendado)
+Para cualquier usuario que quiera usar el programa directamente como cualquier aplicación de PC (Word, Excel, etc.):
+1. Entra a la sección de **[Releases del repositorio](https://github.com/CV17d/converterpdf/releases)**.
 2. Descarga el archivo **`DocuMorph_Windows.zip`**.
 3. Descomprime la carpeta y haz doble clic en **`DocuMorph.exe`**.
-4. ¡El navegador se abrirá automáticamente con el convertidor listo!
+4. ✨ **Se abrirá una ventana de escritorio nativa e independiente** (sin terminal de comandos, sin barra de localhost y sin navegadores externos).
 
 ---
 
 ### Opción B: Clonar el repositorio
-Ideal para desarrolladores o para ejecutar desde código fuente:
+Para ejecutar directamente desde el código fuente o desarrollar mejoras:
 
 ```bash
 git clone https://github.com/CV17d/converterpdf.git
@@ -24,20 +24,20 @@ cd converterpdf
 ```
 
 * **En Windows (1 solo clic):**
-  Haz doble clic en **`iniciar.bat`** *(detecta e instala librerías si faltan y abre el navegador automáticamente)*.
+  Haz doble clic en **`iniciar.bat`** *(instala dependencias si faltan y arranca la aplicación)*.
 
 * **Desde consola (Windows, Mac o Linux):**
   ```bash
   pip install -r requirements.txt
-  python app.py
+  python main_gui.py
   ```
 
 ---
 
-### Opción C: Compilar tu propio .exe
-Si quieres generar tu propio ejecutable independiente en Windows:
+### Opción C: Compilar tu propio ejecutable de escritorio
+Si deseas compilar la aplicación tú mismo en Windows:
 - Haz doble clic en el archivo **`crear_exe.bat`**.
-- El script compilará la aplicación y generará la carpeta `dist\DocuMorph\DocuMorph.exe` y el archivo `dist\DocuMorph_Windows.zip`.
+- Compilará la versión nativa sin consola y empaquetará el archivo `dist\DocuMorph_Windows.zip`.
 
 ---
 
@@ -58,16 +58,6 @@ Si quieres generar tu propio ejecutable independiente en Windows:
 
 ---
 
-## 💻 Uso por Línea de Comandos (CLI)
-```bash
-# Convertir PDF a Word
-python cli.py "documento.pdf" -o "salida.docx"
-
-# Convertir solo páginas específicas (ejemplo: páginas 1 a 3 y página 5)
-python cli.py "documento.pdf" --pages "1-3,5"
-```
-
----
-
-## 🔒 Privacidad y Seguridad
-Tus documentos nunca salen de tu ordenador. No requiere conexión a internet para convertir archivos ni almacena tus datos en la nube.
+## 🔒 Privacidad y Rendimiento
+- **Ventana nativa:** Corre en su propio proceso independiente con WebView2 de alta velocidad.
+- **100% privado:** Todos tus archivos se procesan en tu propia máquina sin conexión a servidores externos.

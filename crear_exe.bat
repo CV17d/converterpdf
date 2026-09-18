@@ -1,20 +1,20 @@
 @echo off
-title Generador de Ejecutable (.exe) - DocuMorph
+title Generador de Aplicacion de Escritorio (.exe) - DocuMorph
 color 0b
 
 echo ========================================================
-echo        COMPILADOR DE EJECUTABLE (.EXE) - DOCUMORPH
+echo   COMPILADOR DE APLICACION DE ESCRITORIO (.EXE)
 echo ========================================================
 echo.
-echo 1. Verificando PyInstaller...
-python -m pip install pyinstaller
+echo 1. Verificando librerias de empaquetado...
+python -m pip install pyinstaller pywebview
 
 echo.
-echo 2. Compilando aplicacion a ejecutable independiente...
-echo Esto tomara entre 1 y 3 minutos...
+echo 2. Compilando aplicacion a ejecutable de escritorio nativo...
+echo (Sin consola negra, con ventana nativa de PC)
 echo.
 
-python -m PyInstaller --name "DocuMorph" --noconfirm --onedir --clean --add-data "templates;templates" --add-data "static;static" app.py
+python -m PyInstaller --name "DocuMorph" --noconfirm --onedir --windowed --clean --add-data "templates;templates" --add-data "static;static" main_gui.py
 
 if %errorlevel% neq 0 (
     echo.
@@ -29,12 +29,12 @@ python -c "import shutil; shutil.make_archive('dist/DocuMorph_Windows', 'zip', '
 
 echo.
 echo ========================================================
-echo   ¡COMPILACION COMPLETADA CON EXITO!
+echo   ¡COMPILACION COMPLETADA EXITOSAMENTE!
 echo ========================================================
-echo El ejecutable (.exe) se encuentra en:
-echo carpeta: dist\DocuMorph\DocuMorph.exe
+echo La aplicacion nativa (.exe) esta lista en:
+echo dist\DocuMorph\DocuMorph.exe
 echo.
-echo El archivo ZIP portable listo para compartir se encuentra en:
-echo archivo: dist\DocuMorph_Windows.zip
+echo El archivo ZIP portable listo para compartir en GitHub Releases:
+echo dist\DocuMorph_Windows.zip
 echo.
 pause
