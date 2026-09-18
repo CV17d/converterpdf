@@ -4,40 +4,40 @@ Convertidor de documentos y PDFs 100% local, privado, sin límites de tamaño y 
 
 ---
 
-## 🚀 Inicio Rápido (Para cualquier persona que clone el repo)
+## ⚡ ¿Cómo usar la aplicación? (Elige tu opción)
 
-### Requisito previo
-Tener **Python 3.10 o superior** instalado ([Descargar Python](https://www.python.org/downloads/)).
-> *Nota: Al instalar Python en Windows, asegúrate de marcar la casilla **"Add Python to PATH"**.*
+### Opción A: Descargar el ejecutable (.exe) directo (Sin instalar Python)
+Ideal para usuarios finales que solo quieren usar el programa sin tocar código:
+1. Ve a la pestaña de **[Releases del repositorio](https://github.com/CV17d/converterpdf/releases)**.
+2. Descarga el archivo **`DocuMorph_Windows.zip`**.
+3. Descomprime la carpeta y haz doble clic en **`DocuMorph.exe`**.
+4. ¡El navegador se abrirá automáticamente con el convertidor listo!
 
 ---
 
-### Paso a paso para usarlo:
+### Opción B: Clonar el repositorio
+Ideal para desarrolladores o para ejecutar desde código fuente:
 
-#### 1. Clonar el repositorio
-Abre tu terminal (PowerShell, CMD o Terminal) y escribe:
 ```bash
 git clone https://github.com/CV17d/converterpdf.git
 cd converterpdf
 ```
 
-#### 2. Iniciar el proyecto
+* **En Windows (1 solo clic):**
+  Haz doble clic en **`iniciar.bat`** *(detecta e instala librerías si faltan y abre el navegador automáticamente)*.
 
-* **En Windows (Recomendado - 1 Clic):**
-  Solo haz doble clic en el archivo **`iniciar.bat`**.
-  *(El script detectará automáticamente si necesitas instalar las librerías, las instalará y abrirá tu navegador web).*
-
-* **Desde la terminal (Windows, Mac o Linux):**
+* **Desde consola (Windows, Mac o Linux):**
   ```bash
-  # 1. Instalar librerías
   pip install -r requirements.txt
-
-  # 2. Iniciar la aplicación
   python app.py
   ```
 
-¡Listo! Tu navegador se abrirá automáticamente en:
-👉 **`http://127.0.0.1:5000`**
+---
+
+### Opción C: Compilar tu propio .exe
+Si quieres generar tu propio ejecutable independiente en Windows:
+- Haz doble clic en el archivo **`crear_exe.bat`**.
+- El script compilará la aplicación y generará la carpeta `dist\DocuMorph\DocuMorph.exe` y el archivo `dist\DocuMorph_Windows.zip`.
 
 ---
 
@@ -59,8 +59,6 @@ cd converterpdf
 ---
 
 ## 💻 Uso por Línea de Comandos (CLI)
-Si prefieres convertir archivos directamente desde la terminal:
-
 ```bash
 # Convertir PDF a Word
 python cli.py "documento.pdf" -o "salida.docx"
